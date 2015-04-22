@@ -1,0 +1,14 @@
+#commads for redo ssl
+puppet cert --revoke puppet
+puppet cert --clean puppet
+
+Second: On Client
+
+rm -rf /usr/lib/puppet/ssl
+puppet agent --server 192.168.33.10 --waitforcert 60
+
+Third: On Server
+
+puppet cert --list 
+puppet cert --sign puppet
+!etc/hostname was changed
