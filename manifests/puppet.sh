@@ -7,3 +7,4 @@ sudo apt-get install puppet -y
 sudo apt-get install puppetmaster-passenger -y
 sudo apt-get install puppetmaster -y
 sudo puppet resource package puppet ensure=latest
+sudo service puppetmaster start

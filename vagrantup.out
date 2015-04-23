@@ -1,0 +1,536 @@
+Bringing machine 'puppet' up with 'virtualbox' provider...
+==> puppet: Importing base box 'hashicorp/precise32'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 50%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> puppet: Matching MAC address for NAT networking...
+==> puppet: Checking if box 'hashicorp/precise32' is up to date...
+==> puppet: Setting the name of the VM: puppet
+==> puppet: Clearing any previously set network interfaces...
+==> puppet: Preparing network interfaces based on configuration...
+    puppet: Adapter 1: nat
+    puppet: Adapter 2: hostonly
+==> puppet: Forwarding ports...
+    puppet: 80 => 8080 (adapter 1)
+    puppet: 22 => 2222 (adapter 1)
+==> puppet: Running 'pre-boot' VM customizations...
+==> puppet: Booting VM...
+==> puppet: Waiting for machine to boot. This may take a few minutes...
+    puppet: SSH address: 127.0.0.1:2222
+    puppet: SSH username: vagrant
+    puppet: SSH auth method: private key
+    puppet: Warning: Connection timeout. Retrying...
+    puppet: Warning: Connection timeout. Retrying...
+    puppet: Warning: Connection timeout. Retrying...
+    puppet: 
+    puppet: Vagrant insecure key detected. Vagrant will automatically replace
+    puppet: this with a newly generated keypair for better security.
+    puppet: 
+    puppet: Inserting generated public key within guest...
+    puppet: Removing insecure key from the guest if its present...
+    puppet: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> puppet: Machine booted and ready!
+==> puppet: Checking for guest additions in VM...
+    puppet: The guest additions on this VM do not match the installed version of
+    puppet: VirtualBox! In most cases this is fine, but in rare cases it can
+    puppet: prevent things such as shared folders from working properly. If you see
+    puppet: shared folder errors, please make sure the guest additions within the
+    puppet: virtual machine match the version of VirtualBox you have installed on
+    puppet: your host and reload your VM.
+    puppet: 
+    puppet: Guest Additions Version: 4.2.0
+    puppet: VirtualBox Version: 4.1
+==> puppet: Setting hostname...
+==> puppet: Configuring and enabling network interfaces...
+==> puppet: Mounting shared folders...
+    puppet: /vagrant => /etc/puppet
+==> puppet: Running provisioner: shell...
+    puppet: Running: /tmp/vagrant-shell20150423-13806-1m4iark.sh
+==> puppet: stdin: is not a tty
+==> puppet: Adding puppet repo
+==> puppet: --2015-04-23 08:48:54--  https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+==> puppet: Resolving apt.puppetlabs.com (apt.puppetlabs.com)... 
+==> puppet: 192.155.89.90
+==> puppet: Connecting to apt.puppetlabs.com (apt.puppetlabs.com)|192.155.89.90|:443... 
+==> puppet: connected.
+==> puppet: HTTP request sent, awaiting response... 
+==> puppet: 200 OK
+==> puppet: Length: 
+==> puppet: 7384
+==> puppet:  (7.2K)
+==> puppet:  [application/x-debian-package]
+==> puppet: Saving to: `puppetlabs-release-trusty.deb'
+==> puppet: 
+==> puppet:      0K
+==> puppet:  
+==> puppet: .
+==> puppet: .
+==> puppet: .
+==> puppet: .
+==> puppet: .
+==> puppet: .
+==> puppet: .
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:  
+==> puppet:                               100% 22.3M=0s
+==> puppet: 
+==> puppet: 2015-04-23 08:48:55 (22.3 MB/s) - `puppetlabs-release-trusty.deb' saved [7384/7384]
+==> puppet: Selecting previously unselected package puppetlabs-release.
+==> puppet: (Reading database ... 
+==> puppet: 29361 files and directories currently installed.)
+==> puppet: Unpacking puppetlabs-release (from puppetlabs-release-trusty.deb) ...
+==> puppet: Setting up puppetlabs-release (1.0-11) ...
+==> puppet: Ign http://us.archive.ubuntu.com precise InRelease
+==> puppet: Ign http://us.archive.ubuntu.com precise-updates InRelease
+==> puppet: Ign http://us.archive.ubuntu.com precise-backports InRelease
+==> puppet: Hit http://us.archive.ubuntu.com precise Release.gpg
+==> puppet: Get:1 http://us.archive.ubuntu.com precise-updates Release.gpg [198 B]
+==> puppet: Get:2 http://us.archive.ubuntu.com precise-backports Release.gpg [198 B]
+==> puppet: Hit http://us.archive.ubuntu.com precise Release
+==> puppet: Get:3 http://us.archive.ubuntu.com precise-updates Release [196 kB]
+==> puppet: Ign http://apt.puppetlabs.com trusty InRelease
+==> puppet: Get:4 http://apt.puppetlabs.com trusty Release.gpg [876 B]
+==> puppet: Get:5 http://us.archive.ubuntu.com precise-backports Release [54.3 kB]
+==> puppet: Get:6 http://apt.puppetlabs.com trusty Release [29.3 kB]
+==> puppet: Hit http://us.archive.ubuntu.com precise/main Sources
+==> puppet: Hit http://us.archive.ubuntu.com precise/restricted Sources
+==> puppet: Hit http://us.archive.ubuntu.com precise/universe Sources
+==> puppet: Hit http://us.archive.ubuntu.com precise/multiverse Sources
+==> puppet: Hit http://us.archive.ubuntu.com precise/main i386 Packages
+==> puppet: Hit http://us.archive.ubuntu.com precise/restricted i386 Packages
+==> puppet: Hit http://us.archive.ubuntu.com precise/universe i386 Packages
+==> puppet: Hit http://us.archive.ubuntu.com precise/multiverse i386 Packages
+==> puppet: Hit http://us.archive.ubuntu.com precise/main TranslationIndex
+==> puppet: Hit http://us.archive.ubuntu.com precise/multiverse TranslationIndex
+==> puppet: Hit http://us.archive.ubuntu.com precise/restricted TranslationIndex
+==> puppet: Hit http://us.archive.ubuntu.com precise/universe TranslationIndex
+==> puppet: Hit http://us.archive.ubuntu.com precise/main Translation-en
+==> puppet: Hit http://us.archive.ubuntu.com precise/multiverse Translation-en
+==> puppet: Get:7 http://us.archive.ubuntu.com precise-updates/main Sources [487 kB]
+==> puppet: Get:8 http://us.archive.ubuntu.com precise-updates/restricted Sources [7,981 B]
+==> puppet: Get:9 http://us.archive.ubuntu.com precise-updates/universe Sources [113 kB]
+==> puppet: Get:10 http://us.archive.ubuntu.com precise-updates/multiverse Sources [9,413 B]
+==> puppet: Get:11 http://us.archive.ubuntu.com precise-updates/main i386 Packages [929 kB]
+==> puppet: Get:12 http://us.archive.ubuntu.com precise-updates/restricted i386 Packages [13.6 kB]
+==> puppet: Get:13 http://us.archive.ubuntu.com precise-updates/universe i386 Packages [269 kB]
+==> puppet: Get:14 http://us.archive.ubuntu.com precise-updates/multiverse i386 Packages [16.6 kB]
+==> puppet: Get:15 http://us.archive.ubuntu.com precise-updates/main TranslationIndex [10.6 kB]
+==> puppet: Get:16 http://us.archive.ubuntu.com precise-updates/multiverse TranslationIndex [7,613 B]
+==> puppet: Get:17 http://apt.puppetlabs.com trusty/main Sources [18.3 kB]
+==> puppet: Get:18 http://us.archive.ubuntu.com precise-updates/restricted TranslationIndex [7,297 B]
+==> puppet: Get:19 http://us.archive.ubuntu.com precise-updates/universe TranslationIndex [8,333 B]
+==> puppet: Hit http://us.archive.ubuntu.com precise/restricted Translation-en
+==> puppet: Hit http://us.archive.ubuntu.com precise/universe Translation-en
+==> puppet: Get:20 http://us.archive.ubuntu.com precise-backports/main Sources [5,411 B]
+==> puppet: Get:21 http://us.archive.ubuntu.com precise-backports/restricted Sources [28 B]
+==> puppet: Get:22 http://us.archive.ubuntu.com precise-backports/universe Sources [41.4 kB]
+==> puppet: Get:23 http://us.archive.ubuntu.com precise-backports/multiverse Sources [5,750 B]
+==> puppet: Get:24 http://us.archive.ubuntu.com precise-backports/main i386 Packages [5,484 B]
+==> puppet: Get:25 http://us.archive.ubuntu.com precise-backports/restricted i386 Packages [28 B]
+==> puppet: Get:26 http://us.archive.ubuntu.com precise-backports/universe i386 Packages [43.3 kB]
+==> puppet: Get:27 http://us.archive.ubuntu.com precise-backports/multiverse i386 Packages [5,413 B]
+==> puppet: Get:28 http://us.archive.ubuntu.com precise-backports/main TranslationIndex [202 B]
+==> puppet: Get:29 http://apt.puppetlabs.com trusty/dependencies Sources [1,418 B]
+==> puppet: Get:30 http://apt.puppetlabs.com trusty/main i386 Packages [29.7 kB]
+==> puppet: Get:31 http://us.archive.ubuntu.com precise-backports/multiverse TranslationIndex [202 B]
+==> puppet: Get:32 http://us.archive.ubuntu.com precise-backports/restricted TranslationIndex [193 B]
+==> puppet: Get:33 http://us.archive.ubuntu.com precise-backports/universe TranslationIndex [205 B]
+==> puppet: Get:34 http://us.archive.ubuntu.com precise-updates/main Translation-en [390 kB]
+==> puppet: Get:35 http://apt.puppetlabs.com trusty/dependencies i386 Packages [932 B]
+==> puppet: Ign http://apt.puppetlabs.com trusty/dependencies TranslationIndex
+==> puppet: Ign http://apt.puppetlabs.com trusty/main TranslationIndex
+==> puppet: Get:36 http://us.archive.ubuntu.com precise-updates/multiverse Translation-en [9,533 B]
+==> puppet: Get:37 http://us.archive.ubuntu.com precise-updates/restricted Translation-en [2,982 B]
+==> puppet: Get:38 http://us.archive.ubuntu.com precise-updates/universe Translation-en [153 kB]
+==> puppet: Get:39 http://us.archive.ubuntu.com precise-backports/main Translation-en [4,911 B]
+==> puppet: Get:40 http://us.archive.ubuntu.com precise-backports/multiverse Translation-en [4,838 B]
+==> puppet: Hit http://us.archive.ubuntu.com precise-backports/restricted Translation-en
+==> puppet: Get:41 http://us.archive.ubuntu.com precise-backports/universe Translation-en [34.4 kB]
+==> puppet: Ign http://apt.puppetlabs.com trusty/dependencies Translation-en_US
+==> puppet: Ign http://apt.puppetlabs.com trusty/dependencies Translation-en
+==> puppet: Ign http://apt.puppetlabs.com trusty/main Translation-en_US
+==> puppet: Ign http://apt.puppetlabs.com trusty/main Translation-en
+==> puppet: Ign http://security.ubuntu.com precise-security InRelease
+==> puppet: Get:42 http://security.ubuntu.com precise-security Release.gpg [198 B]
+==> puppet: Get:43 http://security.ubuntu.com precise-security Release [54.3 kB]
+==> puppet: Get:44 http://security.ubuntu.com precise-security/main Sources [127 kB]
+==> puppet: Get:45 http://security.ubuntu.com precise-security/restricted Sources [3,759 B]
+==> puppet: Get:46 http://security.ubuntu.com precise-security/universe Sources [35.6 kB]
+==> puppet: Get:47 http://security.ubuntu.com precise-security/multiverse Sources [1,816 B]
+==> puppet: Get:48 http://security.ubuntu.com precise-security/main i386 Packages [535 kB]
+==> puppet: Get:49 http://security.ubuntu.com precise-security/restricted i386 Packages [8,939 B]
+==> puppet: Get:50 http://security.ubuntu.com precise-security/universe i386 Packages [123 kB]
+==> puppet: Get:51 http://security.ubuntu.com precise-security/multiverse i386 Packages [2,650 B]
+==> puppet: Get:52 http://security.ubuntu.com precise-security/main TranslationIndex [208 B]
+==> puppet: Get:53 http://security.ubuntu.com precise-security/multiverse TranslationIndex [199 B]
+==> puppet: Get:54 http://security.ubuntu.com precise-security/restricted TranslationIndex [202 B]
+==> puppet: Get:55 http://security.ubuntu.com precise-security/universe TranslationIndex [205 B]
+==> puppet: Get:56 http://security.ubuntu.com precise-security/main Translation-en [220 kB]
+==> puppet: Get:57 http://security.ubuntu.com precise-security/multiverse Translation-en [1,299 B]
+==> puppet: Get:58 http://security.ubuntu.com precise-security/restricted Translation-en [2,066 B]
+==> puppet: Get:59 http://security.ubuntu.com precise-security/universe Translation-en [71.1 kB]
+==> puppet: Fetched 4,106 kB in 49710d 4h 29min 14s (0 B/s)
+==> puppet: Reading package lists...
+==> puppet: installing puppet
+==> puppet: Reading package lists...
+==> puppet: Building dependency tree...
+==> puppet: Reading state information...
+==> puppet: The following extra packages will be installed:
+==> puppet:   augeas-lenses debconf-utils facter hiera libaugeas-ruby libaugeas-ruby1.8
+==> puppet:   libaugeas0 libjson-ruby libreadline5 libruby libruby1.8 libshadow-ruby1.8
+==> puppet:   puppet-common ruby ruby-json ruby1.8 virt-what
+==> puppet: Suggested packages:
+==> puppet:   augeas-doc augeas-tools puppet-el vim-puppet ruby-selinux libselinux-ruby1.8
+==> puppet:   librrd-ruby1.9.1 librrd-ruby1.8 ri ruby-dev ruby1.8-examples ri1.8
+==> puppet: Recommended packages:
+==> puppet:   rdoc
+==> puppet: The following NEW packages will be installed:
+==> puppet:   augeas-lenses debconf-utils facter hiera libaugeas-ruby libaugeas-ruby1.8
+==> puppet:   libaugeas0 libjson-ruby libreadline5 libruby libruby1.8 libshadow-ruby1.8
+==> puppet:   puppet puppet-common ruby ruby-json ruby1.8 virt-what
+==> puppet: 0 upgraded, 18 newly installed, 0 to remove and 179 not upgraded.
+==> puppet: Need to get 3,809 kB of archives.
+==> puppet: After this operation, 17.3 MB of additional disk space will be used.
+==> puppet: Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/main libreadline5 i386 5.2-11 [123 kB]
+==> puppet: Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/main augeas-lenses all 0.10.0-0ubuntu4 [175 kB]
+==> puppet: Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/main debconf-utils all 1.5.42ubuntu1 [54.9 kB]
+==> puppet: Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libruby1.8 i386 1.8.7.352-2ubuntu1.6 [1,782 kB]
+==> puppet: Get:5 http://apt.puppetlabs.com/ trusty/main facter all 2.4.3-1puppetlabs1 [73.2 kB]
+==> puppet: Get:6 http://apt.puppetlabs.com/ trusty/main hiera all 1.3.4-1puppetlabs1 [12.0 kB]
+==> puppet: Get:7 http://apt.puppetlabs.com/ trusty/main puppet-common all 3.7.5-1puppetlabs1 [1,258 kB]
+==> puppet: Get:8 http://apt.puppetlabs.com/ trusty/main puppet all 3.7.5-1puppetlabs1 [9,312 B]
+==> puppet: Get:9 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main ruby1.8 i386 1.8.7.352-2ubuntu1.6 [33.8 kB]
+==> puppet: Get:10 http://us.archive.ubuntu.com/ubuntu/ precise/main ruby all 4.8 [5,054 B]
+==> puppet: Get:11 http://us.archive.ubuntu.com/ubuntu/ precise/universe virt-what i386 1.11-1 [12.8 kB]
+==> puppet: Get:12 http://us.archive.ubuntu.com/ubuntu/ precise/main libaugeas0 i386 0.10.0-0ubuntu4 [169 kB]
+==> puppet: Get:13 http://us.archive.ubuntu.com/ubuntu/ precise/main libaugeas-ruby1.8 i386 0.3.0-1.1ubuntu4 [9,490 B]
+==> puppet: Get:14 http://us.archive.ubuntu.com/ubuntu/ precise/universe libaugeas-ruby all 0.3.0-1.1ubuntu4 [3,354 B]
+==> puppet: Get:15 http://us.archive.ubuntu.com/ubuntu/ precise/universe ruby-json i386 1.6.3-1 [72.4 kB]
+==> puppet: Get:16 http://us.archive.ubuntu.com/ubuntu/ precise/universe libjson-ruby all 1.6.3-1 [1,588 B]
+==> puppet: Get:17 http://us.archive.ubuntu.com/ubuntu/ precise/main libruby all 4.8 [4,766 B]
+==> puppet: Get:18 http://us.archive.ubuntu.com/ubuntu/ precise/main libshadow-ruby1.8 i386 1.4.1-8build1 [8,828 B]
+==> puppet: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+==> puppet: Fetched 3,809 kB in 5s (672 kB/s)
+==> puppet: Selecting previously unselected package libreadline5.
+==> puppet: (Reading database ... 
+==> puppet: 29368 files and directories currently installed.)
+==> puppet: Unpacking libreadline5 (from .../libreadline5_5.2-11_i386.deb) ...
+==> puppet: Selecting previously unselected package augeas-lenses.
+==> puppet: Unpacking augeas-lenses (from .../augeas-lenses_0.10.0-0ubuntu4_all.deb) ...
+==> puppet: Selecting previously unselected package debconf-utils.
+==> puppet: Unpacking debconf-utils (from .../debconf-utils_1.5.42ubuntu1_all.deb) ...
+==> puppet: Selecting previously unselected package libruby1.8.
+==> puppet: Unpacking libruby1.8 (from .../libruby1.8_1.8.7.352-2ubuntu1.6_i386.deb) ...
+==> puppet: Selecting previously unselected package ruby1.8.
+==> puppet: Unpacking ruby1.8 (from .../ruby1.8_1.8.7.352-2ubuntu1.6_i386.deb) ...
+==> puppet: Selecting previously unselected package ruby.
+==> puppet: Unpacking ruby (from .../apt/archives/ruby_4.8_all.deb) ...
+==> puppet: Selecting previously unselected package virt-what.
+==> puppet: Unpacking virt-what (from .../virt-what_1.11-1_i386.deb) ...
+==> puppet: Selecting previously unselected package facter.
+==> puppet: Unpacking facter (from .../facter_2.4.3-1puppetlabs1_all.deb) ...
+==> puppet: Selecting previously unselected package libaugeas0.
+==> puppet: Unpacking libaugeas0 (from .../libaugeas0_0.10.0-0ubuntu4_i386.deb) ...
+==> puppet: Selecting previously unselected package libaugeas-ruby1.8.
+==> puppet: Unpacking libaugeas-ruby1.8 (from .../libaugeas-ruby1.8_0.3.0-1.1ubuntu4_i386.deb) ...
+==> puppet: Selecting previously unselected package libaugeas-ruby.
+==> puppet: Unpacking libaugeas-ruby (from .../libaugeas-ruby_0.3.0-1.1ubuntu4_all.deb) ...
+==> puppet: Selecting previously unselected package ruby-json.
+==> puppet: Unpacking ruby-json (from .../ruby-json_1.6.3-1_i386.deb) ...
+==> puppet: Selecting previously unselected package libjson-ruby.
+==> puppet: Unpacking libjson-ruby (from .../libjson-ruby_1.6.3-1_all.deb) ...
+==> puppet: Selecting previously unselected package libruby.
+==> puppet: Unpacking libruby (from .../archives/libruby_4.8_all.deb) ...
+==> puppet: Selecting previously unselected package libshadow-ruby1.8.
+==> puppet: Unpacking libshadow-ruby1.8 (from .../libshadow-ruby1.8_1.4.1-8build1_i386.deb) ...
+==> puppet: Selecting previously unselected package hiera.
+==> puppet: Unpacking hiera (from .../hiera_1.3.4-1puppetlabs1_all.deb) ...
+==> puppet: Selecting previously unselected package puppet-common.
+==> puppet: Unpacking puppet-common (from .../puppet-common_3.7.5-1puppetlabs1_all.deb) ...
+==> puppet: Selecting previously unselected package puppet.
+==> puppet: Unpacking puppet (from .../puppet_3.7.5-1puppetlabs1_all.deb) ...
+==> puppet: Processing triggers for man-db ...
+==> puppet: Processing triggers for ureadahead ...
+==> puppet: ureadahead will be reprofiled on next reboot
+==> puppet: Setting up libreadline5 (5.2-11) ...
+==> puppet: Setting up augeas-lenses (0.10.0-0ubuntu4) ...
+==> puppet: Setting up debconf-utils (1.5.42ubuntu1) ...
+==> puppet: Setting up libruby1.8 (1.8.7.352-2ubuntu1.6) ...
+==> puppet: Setting up ruby1.8 (1.8.7.352-2ubuntu1.6) ...
+==> puppet: update-alternatives: 
+==> puppet: using /usr/bin/ruby1.8 to provide /usr/bin/ruby (ruby) in auto mode.
+==> puppet: Setting up ruby (4.8) ...
+==> puppet: Setting up virt-what (1.11-1) ...
+==> puppet: Setting up facter (2.4.3-1puppetlabs1) ...
+==> puppet: Setting up libaugeas0 (0.10.0-0ubuntu4) ...
+==> puppet: Setting up libaugeas-ruby1.8 (0.3.0-1.1ubuntu4) ...
+==> puppet: Setting up libaugeas-ruby (0.3.0-1.1ubuntu4) ...
+==> puppet: Setting up ruby-json (1.6.3-1) ...
+==> puppet: Setting up libjson-ruby (1.6.3-1) ...
+==> puppet: Setting up libruby (4.8) ...
+==> puppet: Setting up libshadow-ruby1.8 (1.4.1-8build1) ...
+==> puppet: Setting up hiera (1.3.4-1puppetlabs1) ...
+==> puppet: Setting up puppet-common (3.7.5-1puppetlabs1) ...
+==> puppet: Setting up puppet (3.7.5-1puppetlabs1) ...
+==> puppet:  * Starting puppet agent
+==> puppet: puppet not configured to start, please edit /etc/default/puppet to enable
+==> puppet:    ...done.
+==> puppet: Processing triggers for libc-bin ...
+==> puppet: ldconfig deferred processing now taking place
+==> puppet: Reading package lists...
+==> puppet: Building dependency tree...
+==> puppet: Reading state information...
+==> puppet: The following extra packages will be installed:
+==> puppet:   apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common
+==> puppet:   build-essential dpkg-dev fakeroot g++ g++-4.6 javascript-common
+==> puppet:   libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+==> puppet:   libapache2-mod-passenger libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+==> puppet:   libaprutil1-ldap libdpkg-perl libjs-prototype librack-ruby
+==> puppet:   libstdc++6-4.6-dev make patch puppetmaster-common ruby-rack ruby1.8-dev
+==> puppet:   rubygems ssl-cert wwwconfig-common
+==> puppet: Suggested packages:
+==> puppet:   www-browser apache2-doc apache2-suexec apache2-suexec-custom debian-keyring
+==> puppet:   g++-multilib g++-4.6-multilib gcc-4.6-doc libstdc++6-4.6-dbg rails
+==> puppet:   passenger-doc libstdc++6-4.6-doc make-doc diffutils-doc puppet-el vim-puppet
+==> puppet:   stompserver ruby-stomp libstomp-ruby1.8 ruby-ldap libldap-ruby1.8
+==> puppet:   puppetdb-terminus openssl-blacklist mysql-client postgresql-client
+==> puppet: The following NEW packages will be installed:
+==> puppet:   apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common
+==> puppet:   build-essential dpkg-dev fakeroot g++ g++-4.6 javascript-common
+==> puppet:   libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+==> puppet:   libapache2-mod-passenger libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+==> puppet:   libaprutil1-ldap libdpkg-perl libjs-prototype librack-ruby
+==> puppet:   libstdc++6-4.6-dev make patch puppetmaster-common puppetmaster-passenger
+==> puppet:   ruby-rack ruby1.8-dev rubygems ssl-cert wwwconfig-common
+==> puppet: 0 upgraded, 32 newly installed, 0 to remove and 179 not upgraded.
+==> puppet: Need to get 12.9 MB of archives.
+==> puppet: After this operation, 41.1 MB of additional disk space will be used.
+==> puppet: Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/main libapr1 i386 1.4.6-1 [91.3 kB]
+==> puppet: Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/main libaprutil1 i386 1.3.12+dfsg-3 [75.4 kB]
+==> puppet: Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/main libaprutil1-dbd-sqlite3 i386 1.3.12+dfsg-3 [10.2 kB]
+==> puppet: Get:4 http://us.archive.ubuntu.com/ubuntu/ precise/main libaprutil1-ldap i386 1.3.12+dfsg-3 [7,962 B]
+==> puppet: Get:5 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main apache2.2-bin i386 2.2.22-1ubuntu1.8 [1,330 kB]
+==> puppet: Get:6 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main apache2-utils i386 2.2.22-1ubuntu1.8 [89.6 kB]
+==> puppet: Get:7 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main apache2.2-common i386 2.2.22-1ubuntu1.8 [225 kB]
+==> puppet: Get:8 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main apache2-mpm-worker i386 2.2.22-1ubuntu1.8 [2,300 B]
+==> puppet: Get:9 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main apache2 i386 2.2.22-1ubuntu1.8 [1,488 B]
+==> puppet: Get:10 http://us.archive.ubuntu.com/ubuntu/ precise/main libstdc++6-4.6-dev i386 4.6.3-1ubuntu5 [1,643 kB]
+==> puppet: Get:11 http://apt.puppetlabs.com/ trusty/main puppetmaster-common all 3.7.5-1puppetlabs1 [13.8 kB]
+==> puppet: Get:12 http://apt.puppetlabs.com/ trusty/main puppetmaster-passenger all 3.7.5-1puppetlabs1 [11.4 kB]
+==> puppet: Get:13 http://us.archive.ubuntu.com/ubuntu/ precise/main g++-4.6 i386 4.6.3-1ubuntu5 [6,745 kB]
+==> puppet: Get:14 http://us.archive.ubuntu.com/ubuntu/ precise/main g++ i386 4:4.6.3-1ubuntu5 [1,444 B]
+==> puppet: Get:15 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main make i386 3.81-8.1ubuntu1.1 [116 kB]
+==> puppet: Get:16 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libdpkg-perl all 1.16.1.2ubuntu7.6 [181 kB]
+==> puppet: Get:17 http://us.archive.ubuntu.com/ubuntu/ precise/main patch i386 2.6.1-3 [86.0 kB]
+==> puppet: Get:18 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main dpkg-dev all 1.16.1.2ubuntu7.6 [468 kB]
+==> puppet: Get:19 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main build-essential i386 11.5ubuntu2.1 [5,796 B]
+==> puppet: Get:20 http://us.archive.ubuntu.com/ubuntu/ precise/main fakeroot i386 1.18.2-1 [87.9 kB]
+==> puppet: Get:21 http://us.archive.ubuntu.com/ubuntu/ precise/universe wwwconfig-common all 0.2.2 [18.0 kB]
+==> puppet: Get:22 http://us.archive.ubuntu.com/ubuntu/ precise/universe javascript-common all 8 [4,208 B]
+==> puppet: Get:23 http://us.archive.ubuntu.com/ubuntu/ precise/main libalgorithm-diff-perl all 1.19.02-2 [50.7 kB]
+==> puppet: Get:24 http://us.archive.ubuntu.com/ubuntu/ precise/main libalgorithm-diff-xs-perl i386 0.04-2build2 [12.9 kB]
+==> puppet: Get:25 http://us.archive.ubuntu.com/ubuntu/ precise/main libalgorithm-merge-perl all 0.08-2 [12.7 kB]
+==> puppet: Get:26 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main rubygems all 1.8.15-1ubuntu0.1 [449 kB]
+==> puppet: Get:27 http://us.archive.ubuntu.com/ubuntu/ precise/universe ruby-rack all 1.3.5-1 [71.8 kB]
+==> puppet: Get:28 http://us.archive.ubuntu.com/ubuntu/ precise/universe librack-ruby all 1.3.5-1 [2,068 B]
+==> puppet: Get:29 http://us.archive.ubuntu.com/ubuntu/ precise/universe libjs-prototype all 1.7.0-2 [40.9 kB]
+==> puppet: Get:30 http://us.archive.ubuntu.com/ubuntu/ precise/universe libapache2-mod-passenger i386 2.2.11debian-2 [401 kB]
+==> puppet: Get:31 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main ruby1.8-dev i386 1.8.7.352-2ubuntu1.6 [626 kB]
+==> puppet: Get:32 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main ssl-cert all 1.0.28ubuntu0.1 [12.3 kB]
+==> puppet: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+==> puppet: Fetched 12.9 MB in 6s (1,961 kB/s)
+==> puppet: Selecting previously unselected package libapr1.
+==> puppet: (Reading database ... 
+==> puppet: 32277 files and directories currently installed.)
+==> puppet: Unpacking libapr1 (from .../libapr1_1.4.6-1_i386.deb) ...
+==> puppet: Selecting previously unselected package libaprutil1.
+==> puppet: Unpacking libaprutil1 (from .../libaprutil1_1.3.12+dfsg-3_i386.deb) ...
+==> puppet: Selecting previously unselected package libaprutil1-dbd-sqlite3.
+==> puppet: Unpacking libaprutil1-dbd-sqlite3 (from .../libaprutil1-dbd-sqlite3_1.3.12+dfsg-3_i386.deb) ...
+==> puppet: Selecting previously unselected package libaprutil1-ldap.
+==> puppet: Unpacking libaprutil1-ldap (from .../libaprutil1-ldap_1.3.12+dfsg-3_i386.deb) ...
+==> puppet: Selecting previously unselected package apache2.2-bin.
+==> puppet: Unpacking apache2.2-bin (from .../apache2.2-bin_2.2.22-1ubuntu1.8_i386.deb) ...
+==> puppet: Selecting previously unselected package apache2-utils.
+==> puppet: Unpacking apache2-utils (from .../apache2-utils_2.2.22-1ubuntu1.8_i386.deb) ...
+==> puppet: Selecting previously unselected package apache2.2-common.
+==> puppet: Unpacking apache2.2-common (from .../apache2.2-common_2.2.22-1ubuntu1.8_i386.deb) ...
+==> puppet: Selecting previously unselected package apache2-mpm-worker.
+==> puppet: Unpacking apache2-mpm-worker (from .../apache2-mpm-worker_2.2.22-1ubuntu1.8_i386.deb) ...
+==> puppet: Selecting previously unselected package apache2.
+==> puppet: Unpacking apache2 (from .../apache2_2.2.22-1ubuntu1.8_i386.deb) ...
+==> puppet: Selecting previously unselected package libstdc++6-4.6-dev.
+==> puppet: Unpacking libstdc++6-4.6-dev (from .../libstdc++6-4.6-dev_4.6.3-1ubuntu5_i386.deb) ...
+==> puppet: Selecting previously unselected package g++-4.6.
+==> puppet: Unpacking g++-4.6 (from .../g++-4.6_4.6.3-1ubuntu5_i386.deb) ...
+==> puppet: Selecting previously unselected package g++.
+==> puppet: Unpacking g++ (from .../g++_4%3a4.6.3-1ubuntu5_i386.deb) ...
+==> puppet: Selecting previously unselected package make.
+==> puppet: Unpacking make (from .../make_3.81-8.1ubuntu1.1_i386.deb) ...
+==> puppet: Selecting previously unselected package libdpkg-perl.
+==> puppet: Unpacking libdpkg-perl (from .../libdpkg-perl_1.16.1.2ubuntu7.6_all.deb) ...
+==> puppet: Selecting previously unselected package patch.
+==> puppet: Unpacking patch (from .../patch_2.6.1-3_i386.deb) ...
+==> puppet: Selecting previously unselected package dpkg-dev.
+==> puppet: Unpacking dpkg-dev (from .../dpkg-dev_1.16.1.2ubuntu7.6_all.deb) ...
+==> puppet: Selecting previously unselected package build-essential.
+==> puppet: Unpacking build-essential (from .../build-essential_11.5ubuntu2.1_i386.deb) ...
+==> puppet: Selecting previously unselected package fakeroot.
+==> puppet: Unpacking fakeroot (from .../fakeroot_1.18.2-1_i386.deb) ...
+==> puppet: Selecting previously unselected package wwwconfig-common.
+==> puppet: Unpacking wwwconfig-common (from .../wwwconfig-common_0.2.2_all.deb) ...
+==> puppet: Selecting previously unselected package javascript-common.
+==> puppet: Unpacking javascript-common (from .../javascript-common_8_all.deb) ...
+==> puppet: Selecting previously unselected package libalgorithm-diff-perl.
+==> puppet: Unpacking libalgorithm-diff-perl (from .../libalgorithm-diff-perl_1.19.02-2_all.deb) ...
+==> puppet: Selecting previously unselected package libalgorithm-diff-xs-perl.
+==> puppet: Unpacking libalgorithm-diff-xs-perl (from .../libalgorithm-diff-xs-perl_0.04-2build2_i386.deb) ...
+==> puppet: Selecting previously unselected package libalgorithm-merge-perl.
+==> puppet: Unpacking libalgorithm-merge-perl (from .../libalgorithm-merge-perl_0.08-2_all.deb) ...
+==> puppet: Selecting previously unselected package rubygems.
+==> puppet: Unpacking rubygems (from .../rubygems_1.8.15-1ubuntu0.1_all.deb) ...
+==> puppet: Selecting previously unselected package ruby-rack.
+==> puppet: Unpacking ruby-rack (from .../ruby-rack_1.3.5-1_all.deb) ...
+==> puppet: Selecting previously unselected package librack-ruby.
+==> puppet: Unpacking librack-ruby (from .../librack-ruby_1.3.5-1_all.deb) ...
+==> puppet: Selecting previously unselected package libjs-prototype.
+==> puppet: Unpacking libjs-prototype (from .../libjs-prototype_1.7.0-2_all.deb) ...
+==> puppet: Selecting previously unselected package libapache2-mod-passenger.
+==> puppet: Unpacking libapache2-mod-passenger (from .../libapache2-mod-passenger_2.2.11debian-2_i386.deb) ...
+==> puppet: Selecting previously unselected package puppetmaster-common.
+==> puppet: Unpacking puppetmaster-common (from .../puppetmaster-common_3.7.5-1puppetlabs1_all.deb) ...
+==> puppet: Selecting previously unselected package puppetmaster-passenger.
+==> puppet: Unpacking puppetmaster-passenger (from .../puppetmaster-passenger_3.7.5-1puppetlabs1_all.deb) ...
+==> puppet: Selecting previously unselected package ruby1.8-dev.
+==> puppet: Unpacking ruby1.8-dev (from .../ruby1.8-dev_1.8.7.352-2ubuntu1.6_i386.deb) ...
+==> puppet: Selecting previously unselected package ssl-cert.
+==> puppet: Unpacking ssl-cert (from .../ssl-cert_1.0.28ubuntu0.1_all.deb) ...
+==> puppet: Processing triggers for man-db ...
+==> puppet: Processing triggers for ureadahead ...
+==> puppet: Processing triggers for ufw ...
+==> puppet: Setting up libapr1 (1.4.6-1) ...
+==> puppet: Setting up libaprutil1 (1.3.12+dfsg-3) ...
+==> puppet: Setting up libaprutil1-dbd-sqlite3 (1.3.12+dfsg-3) ...
+==> puppet: Setting up libaprutil1-ldap (1.3.12+dfsg-3) ...
+==> puppet: Setting up apache2.2-bin (2.2.22-1ubuntu1.8) ...
+==> puppet: Setting up apache2-utils (2.2.22-1ubuntu1.8) ...
+==> puppet: Setting up apache2.2-common (2.2.22-1ubuntu1.8) ...
+==> puppet: Enabling site default.
+==> puppet: Enabling module alias.
+==> puppet: Enabling module autoindex.
+==> puppet: Enabling module dir.
+==> puppet: Enabling module env.
+==> puppet: Enabling module mime.
+==> puppet: Enabling module negotiation.
+==> puppet: Enabling module setenvif.
+==> puppet: Enabling module status.
+==> puppet: Enabling module auth_basic.
+==> puppet: Enabling module deflate.
+==> puppet: Enabling module authz_default.
+==> puppet: Enabling module authz_user.
+==> puppet: Enabling module authz_groupfile.
+==> puppet: Enabling module authn_file.
+==> puppet: Enabling module authz_host.
+==> puppet: Enabling module reqtimeout.
+==> puppet: Setting up apache2-mpm-worker (2.2.22-1ubuntu1.8) ...
+==> puppet:  * Starting web server apache2
+==> puppet: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+==> puppet:    ...done.
+==> puppet: Setting up apache2 (2.2.22-1ubuntu1.8) ...
+==> puppet: Setting up make (3.81-8.1ubuntu1.1) ...
+==> puppet: Setting up libdpkg-perl (1.16.1.2ubuntu7.6) ...
+==> puppet: Setting up patch (2.6.1-3) ...
+==> puppet: Setting up dpkg-dev (1.16.1.2ubuntu7.6) ...
+==> puppet: Setting up fakeroot (1.18.2-1) ...
+==> puppet: update-alternatives: 
+==> puppet: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode.
+==> puppet: Setting up wwwconfig-common (0.2.2) ...
+==> puppet: Setting up javascript-common (8) ...
+==> puppet: Setting up libalgorithm-diff-perl (1.19.02-2) ...
+==> puppet: Setting up libalgorithm-diff-xs-perl (0.04-2build2) ...
+==> puppet: Setting up libalgorithm-merge-perl (0.08-2) ...
+==> puppet: Setting up rubygems (1.8.15-1ubuntu0.1) ...
+==> puppet: Setting up ruby-rack (1.3.5-1) ...
+==> puppet: Setting up librack-ruby (1.3.5-1) ...
+==> puppet: Setting up libjs-prototype (1.7.0-2) ...
+==> puppet: Setting up libapache2-mod-passenger (2.2.11debian-2) ...
+==> puppet:  * Reloading web server config apache2
+==> puppet: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+==> puppet:    ...done.
+==> puppet: Setting up puppetmaster-common (3.7.5-1puppetlabs1) ...
+==> puppet:  * Starting puppet queue
+==> puppet:    ...done.
+==> puppet: Setting up puppetmaster-passenger (3.7.5-1puppetlabs1) ...
+==> puppet: [1;31mWarning: Setting templatedir is deprecated. See http://links.puppetlabs.com/env-settings-deprecations
+==> puppet:    (at /usr/lib/ruby/vendor_ruby/puppet/settings.rb:1139:in `issue_deprecation_warning')[0m
+==> puppet: [mNotice: Signed certificate request for ca[0m
+==> puppet: [mNotice: puppet has a waiting certificate request[0m
+==> puppet: [mNotice: Signed certificate request for puppet[0m
+==> puppet: [mNotice: Removing file Puppet::SSL::CertificateRequest puppet at '/var/lib/puppet/ssl/ca/requests/puppet.pem'[0m
+==> puppet: [mNotice: Removing file Puppet::SSL::CertificateRequest puppet at '/var/lib/puppet/ssl/certificate_requests/puppet.pem'[0m
+==> puppet: Enabling module ssl.
+==> puppet: See /usr/share/doc/apache2.2-common/README.Debian.gz on how to configure SSL and create self-signed certificates.
+==> puppet: To activate the new configuration, you need to run:
+==> puppet:   service apache2 restart
+==> puppet: Enabling module headers.
+==> puppet: To activate the new configuration, you need to run:
+==> puppet:   service apache2 restart
+==> puppet: Enabling site puppetmaster.
+==> puppet: To activate the new configuration, you need to run:
+==> puppet:   service apache2 reload
+==> puppet:  * Restarting web server apache2
+==> puppet: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+==> puppet:  ... waiting 
+==> puppet: .
+==> puppet: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+==> puppet:    ...done.
+==> puppet: Setting up ruby1.8-dev (1.8.7.352-2ubuntu1.6) ...
+==> puppet: Setting up ssl-cert (1.0.28ubuntu0.1) ...
+==> puppet: Setting up libstdc++6-4.6-dev (4.6.3-1ubuntu5) ...
+==> puppet: Setting up g++-4.6 (4.6.3-1ubuntu5) ...
+==> puppet: Setting up g++ (4:4.6.3-1ubuntu5) ...
+==> puppet: update-alternatives: 
+==> puppet: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode.
+==> puppet: Setting up build-essential (11.5ubuntu2.1) ...
+==> puppet: Processing triggers for libc-bin ...
+==> puppet: ldconfig deferred processing now taking place
+==> puppet: Reading package lists...
+==> puppet: Building dependency tree...
+==> puppet: Reading state information...
+==> puppet: Suggested packages:
+==> puppet:   puppet-el vim-puppet stompserver ruby-stomp libstomp-ruby1.8 ruby-ldap
+==> puppet:   libldap-ruby1.8 puppetdb-terminus
+==> puppet: The following NEW packages will be installed:
+==> puppet:   puppetmaster
+==> puppet: 0 upgraded, 1 newly installed, 0 to remove and 179 not upgraded.
+==> puppet: Need to get 9,984 B of archives.
+==> puppet: After this operation, 69.6 kB of additional disk space will be used.
+==> puppet: Get:1 http://apt.puppetlabs.com/ trusty/main puppetmaster all 3.7.5-1puppetlabs1 [9,984 B]
+==> puppet: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+==> puppet: Fetched 9,984 B in 0s (25.2 kB/s)
+==> puppet: Selecting previously unselected package puppetmaster.
+==> puppet: (Reading database ... 
+==> puppet: 34649 files and directories currently installed.)
+==> puppet: Unpacking puppetmaster (from .../puppetmaster_3.7.5-1puppetlabs1_all.deb) ...
+==> puppet: Processing triggers for ureadahead ...
+==> puppet: Setting up puppetmaster (3.7.5-1puppetlabs1) ...
+==> puppet:  * Starting puppet master
+==> puppet:    ...done.
+==> puppet: [1;31mWarning: Setting templatedir is deprecated. See http://links.puppetlabs.com/env-settings-deprecations
+==> puppet:    (at /usr/lib/ruby/vendor_ruby/puppet/settings.rb:1139:in `issue_deprecation_warning')[0m
+==> puppet: package { 'puppet':
+==> puppet:   ensure => '3.7.5-1puppetlabs1',
+==> puppet: }
+==> puppet: pappetmaster: unrecognized service
