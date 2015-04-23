@@ -1,0 +1,100 @@
+[root@ebnymin2467 puppet]# puppet agent --test --noop --certname puppet --waitforcert 60
+Info: Creating a new SSL key for puppet                                                 
+Info: Caching certificate for ca                                                        
+Info: csr_attributes file loading from /etc/puppet/csr_attributes.yaml                  
+Info: Creating a new SSL certificate request for puppet                                 
+Info: Certificate Request fingerprint (SHA256): 6B:1E:42:F8:81:0F:06:C8:D2:D0:A7:AD:77:CB:75:37:20:1B:15:6B:D5:48:9E:40:79:98:95:D5:95:D8:79:E0                                                                                                           
+Info: Caching certificate for ca                                                                                             
+Info: Caching certificate for puppet                                                                                         
+Info: Caching certificate_revocation_list for ca                                                                             
+Warning: Unable to fetch my node definition, but the agent run will continue:                                                
+Warning: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed: [certificate revoked for /CN=puppet]                                                                                                            
+Info: Caching catalog for puppet                                                                                             
+Info: Applying configuration version '1429782889'                                                                            
+Notice: /Stage[main]/Ntp::Config/File[/etc/ntp.conf]/content:                                                                
+--- /etc/ntp.conf       2015-04-07 16:53:34.522999984 +0300                                                                  
++++ /tmp/puppet-file20150423-19376-1kobocv-0    2015-04-23 12:54:56.419000024 +0300                                          
+@@ -1,59 +1,24 @@                                                                                                            
+-# For more information about this file, see the man pages                                                                   
+-# ntp.conf(5), ntp_acc(5), ntp_auth(5), ntp_clock(5), ntp_misc(5), ntp_mon(5).                                              
++# ntp.conf: Managed by puppet.                                                                                              
++#                                                                                                                           
++# Keep ntpd from panicking in the event of a large clock skew                                                               
++# when a VM guest is suspended and resumed.                                                                                 
++tinker panic 0                                                                                                              
+                                                                                                                             
+-driftfile /var/lib/ntp/drift                                                                                                
+                                                                                                                             
+ # Permit time synchronization with our time source, but do not                                                              
+ # permit the source to query or modify the service on this system.                                                          
+ restrict default kod nomodify notrap nopeer noquery                                                                         
+ restrict -6 default kod nomodify notrap nopeer noquery                                                                      
+-                                                                                                                            
+-# Permit all access over the loopback interface.  This could                                                                
+-# be tightened as well, but to do so would effect some of                                                                   
+-# the administrative functions.                                                                                             
+-restrict 127.0.0.1                                                                                                          
++restrict 127.0.0.1                                                                                                          
+ restrict -6 ::1                                                                                                             
+                                                                                                                             
+-# Hosts on local network are less restricted.                                                                               
+-#restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap                                                                    
+                                                                                                                             
+-# Use public servers from the pool.ntp.org project.                                                                         
+-# Please consider joining the pool (http://www.pool.ntp.org/join.html).                                                     
+ server 0.centos.pool.ntp.org                                                                                                
+ server 1.centos.pool.ntp.org                                                                                                
+ server 2.centos.pool.ntp.org                                                                                                
+                                                                                                                             
+-#broadcast 192.168.1.255 autokey       # broadcast server                                                                   
+-#broadcastclient                       # broadcast client                                                                   
+-#broadcast 224.0.1.1 autokey           # multicast server                                                                   
+-#multicastclient 224.0.1.1             # multicast client                                                                   
+-#manycastserver 239.255.254.254                # manycast server                                                            
+-#manycastclient 239.255.254.254 autokey # manycast client                                                                   
+-                                                                                                                            
+-# Undisciplined Local Clock. This is a fake driver intended for backup                                                      
+-# and when no outside source of synchronized time is available.                                                             
+-#server        127.127.1.0     # local clock                                                                                
+-#fudge 127.127.1.0 stratum 10                                                                                               
+-                                                                                                                            
+-# Enable public key cryptography.                                                                                           
+-#crypto                                                                                                                     
+-                                                                                                                            
+-includefile /etc/ntp/crypto/pw                                                                                              
+-                                                                                                                            
+-# Key file containing the keys and key identifiers used when operating                                                      
+-# with symmetric key cryptography.                                                                                          
+-keys /etc/ntp/keys                                                                                                          
+-                                                                                                                            
+-# Specify the key identifiers which are trusted.                                                                            
+-#trustedkey 4 8 42                                                                                                          
+-                                                                                                                            
+-# Specify the key identifier to use with the ntpdc utility.                                                                 
+-#requestkey 8                                                                                                               
+-                                                                                                                            
+-# Specify the key identifier to use with the ntpq utility.                                                                  
+-#controlkey 8                                                                                                               
+-                                                                                                                            
+-# Enable writing of statistics records.                                                                                     
+-#statistics clockstats cryptostats loopstats peerstats                                                                      
+-server 10.6.0.3  # added by /sbin/dhclient-script                                                                           
+-server 10.6.0.6  # added by /sbin/dhclient-script                                                                           
++                                                                                                                            
++# Driftfile.                                                                                                                
++driftfile /var/lib/ntp/drift                                                                                                
++                                                                                                                            
++
+
+Notice: /Stage[main]/Ntp::Config/File[/etc/ntp.conf]/content: current_value {md5}8cc691b5e4e8c2141a5e539fbc87177c, should be {md5}c9d83653966c1e9b8dfbca77b97ff356 (noop)
+Notice: Class[Ntp::Config]: Would have triggered 'refresh' from 1 events
+Info: Class[Ntp::Config]: Scheduling refresh of Class[Ntp::Service]
+Notice: Class[Ntp::Service]: Would have triggered 'refresh' from 1 events
+Info: Class[Ntp::Service]: Scheduling refresh of Service[ntp]
+Notice: /Stage[main]/Ntp::Service/Service[ntp]/ensure: current_value stopped, should be running (noop)
+Info: /Stage[main]/Ntp::Service/Service[ntp]: Unscheduling refresh on Service[ntp]
+Notice: Class[Ntp::Service]: Would have triggered 'refresh' from 1 events
+Notice: Stage[main]: Would have triggered 'refresh' from 2 events
+Notice: Finished catalog run in 5.67 seconds
+Error: Could not send report: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed: [certificate revoked for /CN=puppet]
+
