@@ -1,0 +1,30 @@
+[vagrant@puppeta ~]$ sudo puppet agent -t                                    
+Info: Retrieving pluginfacts                                                 
+Info: Retrieving plugin                                                      
+Info: Loading facts                                                          
+Info: Caching catalog for puppeta.minsk.epam.com                             
+Info: Applying configuration version '1429983306'                            
+Error: Execution of '/usr/bin/yum -d 0 -e 0 -y list nginx' returned 1: Error: No matching Packages to list
+Error: /Stage[main]/Nginx/Package[nginx]/ensure: change from absent to present failed: Execution of '/usr/bin/yum -d 0 -e 0 -y list nginx' returned 1: Error: No matching Packages to list                                                                
+Error: Could not start Service[nginx]: Execution of '/sbin/service nginx start' returned 1: nginx: unrecognized service      
+Error: /Stage[main]/Nginx/Service[nginx]/ensure: change from stopped to running failed: Could not start Service[nginx]: Execution of '/sbin/service nginx start' returned 1: nginx: unrecognized service                                                  
+Notice: /Stage[main]/Main/Mysql::Db[prod_mdb]/Mysql_user[prod_user@localhost]/ensure: created                                
+Notice: /Stage[main]/Main/Mysql::Db[prod_mdb]/Mysql_database[prod_mdb]/ensure: created                                       
+Notice: /Stage[main]/Main/Mysql::Db[prod_mdb]/Mysql_grant[prod_user@localhost/prod_mdb.*]/ensure: created                    
+Notice: Finished catalog run in 33.88 seconds
+
+[vagrant@puppeta ~]$ sudo yum install epel-release
+
+
+[vagrant@puppeta ~]$ sudo puppet agent -t
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Loading facts
+Info: Caching catalog for puppeta.minsk.epam.com
+Info: Applying configuration version '1429983592'
+Notice: /Stage[main]/Nginx/Package[nginx]/ensure: created
+Notice: /Stage[main]/Nginx/Service[nginx]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Nginx/Service[nginx]: Unscheduling refresh on Service[nginx]
+Notice: Finished catalog run in 171.81 seconds
+
+
