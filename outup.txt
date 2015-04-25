@@ -1,0 +1,16 @@
+vagrant@puppetagent:/etc/puppet$ sudo puppet agent -t --waitforcert 30
+Info: Creating a new SSL key for puppetagent
+Info: Caching certificate for ca
+Info: csr_attributes file loading from /etc/puppet/csr_attributes.yaml
+Info: Creating a new SSL certificate request for puppetagent
+Info: Certificate Request fingerprint (SHA256): C8:05:51:22:15:5A:F5:63:4E:B0:4D:B8:02:BD:B6:64:82:57:1F:A8:26:3A:35:95:19:8A:B4:FE:2D:90:4C:75
+Info: Caching certificate for ca
+Info: Caching certificate for puppetagent
+Info: Caching certificate_revocation_list for ca
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Loading facts
+Info: Caching catalog for puppetagent
+Info: Applying configuration version '1429954439'
+Notice: Finished catalog run in 4.62 seconds
+
