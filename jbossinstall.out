@@ -1,0 +1,22 @@
+[vagrant@puppeta ~]$ sudo puppet agent -t
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Loading facts
+Info: Caching catalog for puppeta.minsk.epam.com
+Info: Applying configuration version '1430060609'
+Notice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Extract jboss-as-7.1.1.Final.zip from /var/tmp]/returns: executed successfully
+Info: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Extract jboss-as-7.1.1.Final.zip from /var/tmp]: Scheduling refresh of Exec[Chown jboss-as-7.1.1.Final.zip in /opt]
+Info: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Extract jboss-as-7.1.1.Final.zip from /var/tmp]: Scheduling refresh of Exec[PostExtract jboss-as-7.1.1.Final.zip in /opt]
+Notice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Chown jboss-as-7.1.1.Final.zip in /opt]: Triggered 'refresh' from 1 events
+Notice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[PostExtract jboss-as-7.1.1.Final.zip in /opt]: Triggered 'refresh' from 1 events
+Notice: /Stage[main]/Jboss::Service/File[jboss.init]/ensure: created
+Notice: /Stage[main]/Jboss::Service/Service[jboss]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Jboss::Service/Service[jboss]: Unscheduling refresh on Service[jboss]
+Notice: /Stage[main]/Main/Node[default]/Jboss::Instance[app]/File[Jboss_initscript_app]/ensure: defined content as '{md5}5fe4b7eb49d21d14eff2e547771cf5e3'
+Info: /Stage[main]/Main/Node[default]/Jboss::Instance[app]/File[Jboss_initscript_app]: Scheduling refresh of Service[jboss-app]
+Notice: /Stage[main]/Main/Node[default]/Jboss::Instance[app]/Exec[Clone_Jboss_Instance_app]/returns: executed successfully
+Notice: /Stage[main]/Main/Node[default]/Jboss::Instance[app]/Exec[Set_Jboss_Instance_Permissions_app]/returns: executed successfully
+Notice: /Stage[main]/Main/Node[default]/Jboss::Instance[app]/Service[jboss-app]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Main/Node[default]/Jboss::Instance[app]/Service[jboss-app]: Unscheduling refresh on Service[jboss-app]
+Notice: Finished catalog run in 300.77 seconds
+
