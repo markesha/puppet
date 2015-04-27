@@ -1,29 +1,19 @@
-class jbapp {
+node 'default' {
 
-$deploy_path = '/opt/jboss-as-7.1.1.Final/standalone/deployments'
+ include 'java'
 
-exec {"temp_fold":
- command => "/bin/mkdir -p /tmp/testweb",
- creates => "/tmp/testweb",
-}
+ class { 'jboss':
+  install             => 'source',
+  version             => '7',
+       }
+ jboss::instance {'app':
+        createuser => false,
+        bindaddr   => '127.0.0.1',
+        port       => '8080',
+                 }
 
-exec{ 'get_app':
- command => "/usr/bin/wget http://www.cumulogic.com/download/Apps/testweb.zip -O /tmp/testweb.zip",
- creates => "/tmp/testweb.zip",
-}
-
-file { 'got_app':
- mode => 0755,
- path => "/tmp/testweb.zip",
- require => Exec["get_app"],
-}
-
-exec {"unzip_app":
- command => "/usr/bin/unzip /tmp/testweb.zip -d {$deploy_path}",
- replace => true,
- require => Exec["got_app"],
-}
-
-
+ include 'jboss'
+ include 'nginx'
+ include 'jbapp'
 }
 
